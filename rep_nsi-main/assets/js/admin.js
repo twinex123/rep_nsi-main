@@ -40,12 +40,14 @@ document.getElementById('toggle-tristan').addEventListener('click', () => {
         if(tristanValue === true){localStorage.setItem("tristan", 1)}else{localStorage.removeItem("tristan")};
         tristanValue = !tristanValue;
         tristanRef.set(tristanValue); 
+        console.log("changed var")
     } else {
         alert('Only an admin can change the Tristan variable.');
     }
 });
 
 tristanRef.on('value', (snapshot) => {
+    console.log("changed value");
     tristanValue = snapshot.val();
     updateTristanStatus();
 });
