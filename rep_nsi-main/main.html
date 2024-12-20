@@ -6,9 +6,24 @@
     <title>NSI 2024</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="https://kit.fontawesome.com/29ce918257.js" crossorigin="anonymous"></script>
-    
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
+
 </head>
 <body>
+
+    <div id="tristan" style="color: black; background-color: red; position: absolute; top: 0; font-size: 200px; z-index: 3000; display: none;">
+        <h1>Tristan n'a rien fait</h1>
+    </div>
+    <script>
+        setInterval(() => {
+            if(localStorage.getItem("tristan")){
+                document.getElementById("tristan").style.display = "block";
+            }else{
+                document.getElementById("tristan").style.display = "none";
+            }
+        }, 100);
+    </script>
 
     <!-- MAIN CONDUCTOR -->
     <div class="main_conductor">
@@ -161,5 +176,6 @@
     </div>
 
     <script src="assets/js/menu.js"></script>
+    <script src="assets/js/admin.js"></script>
 </body>
 </html>
